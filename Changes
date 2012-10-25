@@ -1,0 +1,6 @@
+Revision history for Perl extension Excel::Table.
+
+0.01  Thu Aug  2 17:28:38 2012
+	- original version; created by h2xs 1.23 with options
+		-X -n Excel::Table
+
