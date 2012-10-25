@@ -2,7 +2,7 @@
 # $Header: /home/tomby/src/perl/Excel-Table/t/RCS/Excel-Table4a.t,v 1.1 2012/10/23 19:50:57 tomby Exp $
 #
 # Excel-Table4a.t - test harness for Excel::Table object.
-# $Revision: 1.1 $, Copyright (C) 2010 Thomas McMeekin
+# $Revision: 1.1 $, Copyright (C) 2012 Thomas McMeekin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -140,7 +140,7 @@ $Revision: 1.1 $
 
 =head1 AUTHOR
 
-Copyright (C) 2010  B<Tom McMeekin> tmcmeeki@cpan.org
+Copyright (C) 2012  B<Tom McMeekin> tmcmeeki@cpan.org
 
 This code is distributed under the same terms as Perl.
 

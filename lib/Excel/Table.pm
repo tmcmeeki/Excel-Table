@@ -2,7 +2,7 @@ package Excel::Table;
 # $Header: /home/tomby/src/perl/Excel-Table/lib/Excel/RCS/Table.pm,v 1.10 2012/10/23 20:00:40 tomby Exp $
 #
 # Excel::Table.pm - spreadsheet table processing class.
-# $Revision: 1.10 $, Copyright (C) 2010 Thomas McMeekin
+# $Revision: 1.10 $, Copyright (C) 2012 Thomas McMeekin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -762,7 +762,7 @@ $Revision: 1.10 $
 
 =head1 AUTHOR
 
-Copyright (C) 2010  B<Tom McMeekin> tmcmeeki@cpan.org
+Copyright (C) 2012  B<Tom McMeekin> tmcmeeki@cpan.org
 
 =head1 SEE ALSO
 
