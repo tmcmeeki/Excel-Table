@@ -1,8 +1,6 @@
 package Excel::Table;
-# $Header: /home/tomby/src/perl/Excel-Table/lib/Excel/RCS/Table.pm,v 1.10 2012/10/23 20:00:40 tomby Exp $
 #
 # Excel::Table.pm - spreadsheet table processing class.
-# $Revision: 1.10 $, Copyright (C) 2012 Thomas McMeekin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -245,7 +243,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = sprintf "%d.%03d", q$Revision: 1.10 $ =~ /(\d+)/g;
+$VERSION = "1.011";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();

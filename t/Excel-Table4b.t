@@ -1,8 +1,6 @@
 #!/usr/bin/perl
-# $Header: /home/tomby/src/perl/Excel-Table/t/RCS/Excel-Table4b.t,v 1.1 2012/10/23 19:51:03 tomby Exp $
 #
 # Excel-Table4b.t - test harness for Excel::Table object.
-# $Revision: 1.1 $, Copyright (C) 2012 Thomas McMeekin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
