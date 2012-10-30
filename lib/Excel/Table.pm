@@ -175,56 +175,56 @@ be revised.
 
 Per the B<select> method, but returns an array of hashes.
 
-=item 6.  OBJ->force_null
+=item 6.  OBJ->columns or OBJ->rows
+
+Returns the number of columns or rows available in the sheet extracted via the
+B<extract> method.
+
+=item 7a.  OBJ->force_null
 
 Flag which determines if whitespace fields should be
 replaced by specific text (see OBJ->null).
 
-=item 6.  OBJ->null
+=item 7b.  OBJ->null
 
 String to replace whitespace fields with.  Defaults to "(null)".
 
-=item 6.  OBJ->rowid
+=item 8.  OBJ->rowid
 
 Flag which determines whether a pseudo-column "rowid" is included in each
 tuple.  The value will take the form "999999999"  Defaults to FALSE.  
 
-=item 6.  OBJ->sheet_name
+=item 9.  OBJ->sheet_name
 
 Returns the sheet_name against which data was extracted via B<extract>.
 
-=item 7.  OBJ->titles
+=item 10.  OBJ->trim
+
+Flag which determines if trailing whitespace fields should be trimmed.
+
+=item 11a.  OBJ->title_row
+
+Returns the title row of the worksheet (defaults to zero), following extract.
+
+=item 11b.  OBJ->titles
 
 Returns an array of title fields, the title row number having been defined
 as OBJ->title_row.
 
-=item 6.  OBJ->trim
-
-Flag which determines if trailing whitespace fields should be trimmed.
-
-=item 8.  OBJ->widths
-
-Returns an array of maximum lengths of any (non-title) data in each column.
-
-=item 9.  OBJ->columns (OBJ->rows)
-
-Returns the number of columns (rows) available in the sheet extracted via the
-B<extract> method.
-
-=item 10.  OBJ->title_row
-
-Returns the title row of the worksheet (defaults to zero), following extract.
-
-=item 11a.  OBJ->colid2title(colid)
+=item 11c.  OBJ->colid2title(colid)
 
 Converts the column number (colid) to a string column title (i.e. 
 the offset within the title_row array).
 If no match, then returns undef.
 
-=item 11b.  OBJ->title2colid(REGEXP)
+=item 11d.  OBJ->title2colid(REGEXP)
 
 Returns the column number of the title identified by REGEXP.
 If no match, then returns undef.
+
+=item 12.  OBJ->widths
+
+Returns an array of maximum lengths of any (non-title) data in each column.
 
 =back
 
