@@ -1,5 +1,3 @@
-Excel-Table
-============
 head1 NAME
 
 Excel::Table 
