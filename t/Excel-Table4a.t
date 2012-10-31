@@ -16,12 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
-#
-# History:
-# $Log: Excel-Table4a.t,v $
-# Revision 1.1  2012/10/23 19:50:57  tomby
-# Initial revision
-#
 =head1 NAME
 
 Excel-Table4a.t - test harness for Excel::Table object.
@@ -134,7 +128,7 @@ Select clause.
 
 =head1 VERSION
 
-$Revision: 1.1 $
+___EUMM_VERSION___
 
 =head1 AUTHOR
 

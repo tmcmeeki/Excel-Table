@@ -16,40 +16,6 @@ package Excel::Table;
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
-#
-# History:
-# $Log: Table.pm,v $
-# Revision 1.10  2012/10/23 20:00:40  tomby
-# Added select and refined for CPAN upload.
-#
-# Revision 1.9  2011/04/07 05:08:26  tomby
-# now compatible with Excel 2007 format.
-#
-# Revision 1.8  2010/10/05 02:09:20  tomby
-# corrected documentation.
-#
-# Revision 1.7  2010/07/09 03:29:40  tomby
-# cleanup.
-#
-# Revision 1.6  2010/07/09 03:23:19  tomby
-# Added null and trim functionality.
-#
-# Revision 1.5  2010/06/03 09:09:21  tomby
-# added colid functions.
-#
-# Revision 1.4  2010/05/28 06:26:35  tomby
-# Added documentation.
-#
-# Revision 1.3  2010/05/27 08:37:12  tomby
-# unit testing for extract routine.
-#
-# Revision 1.2  2010/05/25 09:16:53  tomby
-# refined open and list_workbooks functions.
-#
-# Revision 1.1  2010/05/25 06:57:46  tomby
-# Initial revision
-#
-
 =head1 NAME
 
 Excel::Table 
@@ -243,7 +209,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.011";	# update this on new release
+$VERSION = "1.012";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -756,7 +722,7 @@ __END__
 
 =head1 VERSION
 
-$Revision: 1.10 $
+___EUMM_VERSION___
 
 =head1 AUTHOR
 

@@ -16,15 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
-#
-# History:
-# $Log: Excel-Table5.t,v $
-# Revision 1.2  2012/10/23 19:54:34  tomby
-# removed Logfer references.
-#
-# Revision 1.1  2012/10/23 19:51:08  tomby
-# Initial revision
-#
 =head1 NAME
 
 Excel-Table5.t - test harness for Excel::Table object.
@@ -128,7 +119,7 @@ Hash extraction and select.
 
 =head1 VERSION
 
-$Revision: 1.2 $
+___EUMM_VERSION___
 
 =head1 AUTHOR
 

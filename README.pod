@@ -1,4 +1,4 @@
-head1 NAME
+=head1 NAME
 
 Excel::Table 
 
@@ -181,7 +181,7 @@ Returns an array of maximum lengths of any (non-title) data in each column.
 
 =head1 VERSION
 
-$Revision: 1.10 $
+Build V1.012
 
 =head1 AUTHOR
 
