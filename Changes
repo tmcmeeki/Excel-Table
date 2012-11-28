@@ -2,6 +2,10 @@ Revision history for Perl extension Excel::Table.
 
 Make sure you update the build number in the ./lib/Excel/Table.pm file!
 
+1.014	Wed, Nov 28, 2012  9:30:27 PM
+	- corrected the clause ordering on select_hash to select
+	- additional conditions in Excel-Table5.t
+
 1.013	Sat, Nov 17, 2012  9:49:15 PM
 	- updated the PREREQ_PM values in Makefile.PL
 

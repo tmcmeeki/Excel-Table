@@ -209,7 +209,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.013";	# update this on new release
+$VERSION = "1.014";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -407,7 +407,7 @@ sub open_re {
 	my $matches = 0;
 	my $wb = undef;
 
-	$self->_log->debug("regexp [%s]", $self->regexp);
+	$self->_log->debug(sprintf "regexp [%s]", $self->regexp);
 	for ( $self->list_workbooks ) {
 		$self->_log->debug("  file [$_]");
 		if ($_ =~ /$re/) {
@@ -646,7 +646,7 @@ sub select_hash {
 	$self->_log->logcroak("SYNTAX: select_hash(clause,[sheet_name,title_row])")
 		unless (defined @_);
 
-	return $self->_array_to_hash($self->select(@_));
+	return $self->_array_to_hash($self->select($clause, @_));
 }
 
 
