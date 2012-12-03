@@ -181,7 +181,7 @@ Returns an array of maximum lengths of any (non-title) data in each column.
 
 =head1 VERSION
 
-Build V1.015
+Build V1.016
 
 =head1 AUTHOR
 

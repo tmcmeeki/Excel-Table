@@ -115,10 +115,10 @@ for my $s_book (@s_books) {
 		is( $d_hash1[$sub]->{'title_0_2'}, $d_hash2[$sub]->{'title_0_2'}, 	"matching values a $sub");
 		is( $d_hash1[$sub]->{'title_0_7'}, $d_hash2[$sub]->{'title_0_7'}, 	"matching values b $sub");
 
-		is( scalar(keys($d_hash1[$sub])), 10, 	"key count a $sub");
-		is( scalar(values($d_hash1[$sub])), 10, "value count a $sub");
-		is( scalar(keys($d_hash2[$sub])), 3, 	"key count b $sub");
-		is( scalar(values($d_hash2[$sub])), 3, 	"value count b $sub");
+		is( scalar( keys( %{ $d_hash1[$sub] })), 10, 	"key count a $sub");
+		is( scalar( values( %{ $d_hash1[$sub] })), 10, "value count a $sub");
+		is( scalar( keys( %{ $d_hash2[$sub] })), 3, 	"key count b $sub");
+		is( scalar( values( %{ $d_hash2[$sub] })), 3, 	"value count b $sub");
 	}
 
 	$xt = ();

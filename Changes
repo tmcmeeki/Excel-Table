@@ -2,6 +2,9 @@ Revision history for Perl extension Excel::Table.
 
 Make sure you update the build number in the ./lib/Excel/Table.pm file!
 
+1.016	Mon, Dec 03, 2012  9:01:55 PM
+	- casting on hashes in Excel-Table5.t
+
 1.015	Thu, Nov 29, 2012  7:29:44 PM
 	- corrected reference to Logfer
 
