@@ -209,7 +209,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.016";	# update this on new release
+$VERSION = "1.017";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -365,9 +365,14 @@ sub open {
 	$self->_log->logcroak("SYNTAX: open(path)") unless defined ($pn);
 	my $fpn = File::Spec->catfile($self->dir, $pn);
 
-	if (-f $pn) {
-		$self->pathname($pn);
-	} elsif (-f $fpn) {
+# this functionality will tend to look for the file in the cwd, which is not
+# good behaviour, as it is not clear where the file is opening from and
+# since the "dir" atrribute defaults to ".", the preference is to open
+# the full path only.
+#	if (-f $pn) {
+#		$self->pathname($pn);
+#	} elsif (-f $fpn) {
+	if (-f $fpn) {
 		$self->pathname($fpn);
 		$pn = $fpn;
 	} else {
