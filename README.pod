@@ -60,7 +60,14 @@ if they are structured tables array-format.
 
 =over 4
 
-=item 1.  OBJ->list_workbooks
+=item 1a.  OBJ->dir(EXPR)
+
+Override the directory location in which to look for workbooks.
+Defaults to "." (i.e. the current working directory).
+This location is critical to the B<list_workbooks>, B<open>,
+and B<open_re> methods.
+
+=item 1b.  OBJ->list_workbooks
 
 Returns an array of workbook files in the directory defined by the
 B<dir> property.
