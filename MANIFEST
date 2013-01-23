@@ -13,3 +13,4 @@ t/Excel-Table4a.t
 t/Excel-Table4b.t
 t/Excel-Table5.t
 Makefile.PL
+t/Excel-Table1c.t

@@ -92,14 +92,14 @@ B<dir> property.
 
 =item 2a.  OBJ->open(EXPR)
 
-Parses the pathname specified by EXPR.  The B<dir> property optionally 
-specified during the open will designate the search path, although EXPR can
-also be a full pathname.  Once opened, via this method (or B<open_re>) the
+Parses the filename specified by EXPR.  The B<dir> property 
+will designate the search path.
+Once opened, via this method (or B<open_re>) the
 workbook is available for use by the B<extract> method.
 
 =item 2b.  OBJ->open_re(EXPR)
 
-This will search for a file which has a path matching the regexp EXPR.  
+This will search for a file which has a filename matching the regexp EXPR.  
 A warning will be issued if multiple matches are found, only the first will
 be opened.
 
@@ -216,7 +216,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.017";	# update this on new release
+$VERSION = "1.018";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -355,7 +355,9 @@ sub list_workbooks {
 	while ($fn = readdir($dh)) {
 		my $pn = File::Spec->catfile($dn, $fn);
 
-		push @workbooks, $pn
+		# need to remember just the filename here, not the path because
+		# open will use the self->dir property to make the path
+		push @workbooks, $fn
 			if (defined($self->_determine_xl_vers($pn)));
 	}
 
@@ -368,20 +370,15 @@ sub list_workbooks {
 
 
 sub open {
-	my ($self,$pn)=@_;
-	$self->_log->logcroak("SYNTAX: open(path)") unless defined ($pn);
-	my $fpn = File::Spec->catfile($self->dir, $pn);
+	my ($self,$fn)=@_;
+	$self->_log->logcroak("SYNTAX: open(file)") unless defined ($fn);
+	my $pn = File::Spec->catfile($self->dir, $fn);
 
-# this functionality will tend to look for the file in the cwd, which is not
-# good behaviour, as it is not clear where the file is opening from and
-# since the "dir" atrribute defaults to ".", the preference is to open
-# the full path only.
-#	if (-f $pn) {
-#		$self->pathname($pn);
-#	} elsif (-f $fpn) {
-	if (-f $fpn) {
-		$self->pathname($fpn);
-		$pn = $fpn;
+	# to look for the file in the cwd, is not good behaviour,
+	# so dir must be explicit, thus the default to "."
+
+	if (-f $pn) {
+		$self->pathname($pn);
 	} else {
 		$self->_log->logcroak("no such path [$pn]");
 	}

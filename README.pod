@@ -74,14 +74,14 @@ B<dir> property.
 
 =item 2a.  OBJ->open(EXPR)
 
-Parses the pathname specified by EXPR.  The B<dir> property optionally 
-specified during the open will designate the search path, although EXPR can
-also be a full pathname.  Once opened, via this method (or B<open_re>) the
+Parses the filename specified by EXPR.  The B<dir> property 
+will designate the search path.
+Once opened, via this method (or B<open_re>) the
 workbook is available for use by the B<extract> method.
 
 =item 2b.  OBJ->open_re(EXPR)
 
-This will search for a file which has a path matching the regexp EXPR.  
+This will search for a file which has a filename matching the regexp EXPR.  
 A warning will be issued if multiple matches are found, only the first will
 be opened.
 
@@ -188,7 +188,7 @@ Returns an array of maximum lengths of any (non-title) data in each column.
 
 =head1 VERSION
 
-Build V1.017
+Build V1.018
 
 =head1 AUTHOR
 
