@@ -76,7 +76,9 @@ for my $s_book (@s_books) {
 
 	# check current directory, using default directory
 
-	is_deeply( [ $xt1->list_workbooks ], [ @s_books ],	"list_workbooks");
+	$log->debug(sprintf 'list_workbooks [%s] s_books [%s]', Dumper([ $xt1->list_workbooks ]), Dumper(\@s_books));
+
+	is_deeply( [ $xt1->list_workbooks ], \@s_books,	"list_workbooks");
 	my $book = $xt1->open_re($s_re);
 	isa_ok( $xt1->open($s_book), $c_wb,	"open");
 
@@ -87,7 +89,7 @@ for my $s_book (@s_books) {
 
 	# check override directory (which is the absolute path)
 
-	is_deeply( [ $xt1->list_workbooks ], [ @s_books ],	"list_workbooks after set");
+	is_deeply( [ $xt1->list_workbooks ], \@s_books,	"list_workbooks after set");
 
 	$book = $xt1->open_re($s_re);
 	isa_ok( $xt1->open($s_book), $c_wb,	"open");
