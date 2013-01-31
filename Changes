@@ -2,6 +2,10 @@ Revision history for Perl extension Excel::Table.
 
 Make sure you update the build number in the ./lib/Excel/Table.pm file!
 
+1.020	Thu, Jan 31, 2013 11:10:18 PM
+	- is_deeply has inconsistent results cross-platform, so 
+	  provide some explicit sorting, affects unit test harness only.
+
 1.018	Wed, Jan 23, 2013  9:29:48 PM
 	- fixed open_re/list_workbooks dependency on pathnames.
 

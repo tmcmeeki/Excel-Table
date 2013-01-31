@@ -61,6 +61,17 @@ my $g_cwd = cwd;
 my $c_wb = 'Spreadsheet::ParseExcel::Workbook';
 
 
+# ---- sub-routines ----
+sub a2ars {
+#	return an array reference of sorted strings
+	my @out = sort(@_);
+
+	$log->debug(sprintf 'in [%s] out [%s]', Dumper(\@_), Dumper(\@out));
+
+	return \@out;
+}
+
+
 # ---- tests begin here ----
 use Test::More tests => 17;
 my $cycle = 0;
@@ -76,9 +87,7 @@ for my $s_book (@s_books) {
 
 	# check current directory, using default directory
 
-	$log->debug(sprintf 'list_workbooks [%s] s_books [%s]', Dumper([ $xt1->list_workbooks ]), Dumper(\@s_books));
-
-	is_deeply( [ $xt1->list_workbooks ], \@s_books,	"list_workbooks");
+	is_deeply( a2ars($xt1->list_workbooks), a2ars(@s_books), "list_workbooks default");
 	my $book = $xt1->open_re($s_re);
 	isa_ok( $xt1->open($s_book), $c_wb,	"open");
 
@@ -89,7 +98,7 @@ for my $s_book (@s_books) {
 
 	# check override directory (which is the absolute path)
 
-	is_deeply( [ $xt1->list_workbooks ], \@s_books,	"list_workbooks after set");
+	is_deeply( a2ars($xt1->list_workbooks), a2ars(@s_books), "list_workbooks override");
 
 	$book = $xt1->open_re($s_re);
 	isa_ok( $xt1->open($s_book), $c_wb,	"open");
