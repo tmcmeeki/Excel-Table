@@ -216,7 +216,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.020";	# update this on new release
+$VERSION = "1.021";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -642,7 +642,7 @@ sub extract_hash {
 	my $self = shift;
 
 	$self->_log->logcroak("SYNTAX: extract_hash(sheet_name,[title_row])")
-		unless (defined @_);
+		unless (scalar(@_) > 0);
 
 	return $self->_array_to_hash($self->extract(@_));
 }
@@ -653,7 +653,7 @@ sub select_hash {
 	my $clause = shift;
 
 	$self->_log->logcroak("SYNTAX: select_hash(clause,[sheet_name,title_row])")
-		unless (defined @_);
+		unless (scalar(@_) > 0);
 
 	return $self->_array_to_hash($self->select($clause, @_));
 }
