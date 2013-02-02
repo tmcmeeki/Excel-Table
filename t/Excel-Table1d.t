@@ -79,7 +79,7 @@ __END__
 =head1 DESCRIPTION
 
 Test harness for the B<Excel::Table.pm> class.
-More opening: open_re with list_workbooks.
+Manual syntax checking.
 
 =head1 VERSION
 
