@@ -44,9 +44,6 @@ Prints the manual page and exits.
 
 use strict;
 
-use Data::Dumper;
-use File::Spec;
-
 #use Logfer qw/ :all /;
 use Log::Log4perl qw/ :easy /;
 Log::Log4perl->easy_init($ERROR);
