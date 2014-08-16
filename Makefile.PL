@@ -21,6 +21,5 @@ WriteMakefile(
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Excel/Table.pm', # retrieve abstract from module
        AUTHOR         => 'tmcmeeki <tmcmeeki@cpan.org>') : ()),
-	dist => { PREOP => $preop, 
-	},
+	dist => { PREOP => $preop, },
 );

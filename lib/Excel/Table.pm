@@ -2,74 +2,64 @@ package Excel::Table;
 #
 # Excel::Table.pm - spreadsheet table processing class.
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published
-# by the Free Software Foundation; either version 2 of the License,
-# or any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-# General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-#
 =head1 NAME
 
 Excel::Table 
 
+=head1 AUTHOR
+
+Copyright (C) 2012  Tom McMeekin E<lt>tmcmeeki@cpan.orgE<gt>
+
 =head1 SYNOPSIS
 
-	use Excel::Table;
+  use Excel::Table;
 
-	my $xs = Excel::Table->new('dir' => '/cygdrive/c/Users/self/Desktop');
+  my $xs = Excel::Table->new('dir' => '/cygdrive/c/Users/self/Desktop');
 
-	for ($xs->list_workbooks) {
-		print "workbook [$_]\n";
-	}
+  for ($xs->list_workbooks) {
+  	print "workbook [$_]\n";
+  }
 
-	$xs->open('mybook.xls');
+  $xs->open('mybook.xls');
 
-	my $wb1 = $xs->open_re('foo*bar*');
+  my $wb1 = $xs->open_re('foo*bar*');
 
-	for my $worksheet ($wb1->worksheets) {
-		print "worksheet: " . $worksheet->get_name() . "\n";
-	}
+  for my $worksheet ($wb1->worksheets) {
+  	print "worksheet: " . $worksheet->get_name() . "\n";
+  }
 
-	$xs->null("this is a null value");
-	$xs->force_null(1);	
+  $xs->null("this is a null value");
+  $xs->force_null(1);	
 
-	$xs->rowid(0);
+  $xs->rowid(0);
 
-	$xs->trim(0);
+  $xs->trim(0);
 
-	my @data = $xs->extract('Sheet1');
+  my @data = $xs->extract('Sheet1');
 
-	for (@data) {
-		printf "rowid [%s] title [%s] max_width [%d] value [%s]\n",
-			$_->[0],
-			$xs->titles->[0],
-			$xs->widths->[0],
-			$data{$_}->[0];
-	}
+  for (@data) {
+  	printf "rowid [%s] title [%s] max_width [%d] value [%s]\n",
+  		$_->[0],
+  		$xs->titles->[0],
+  		$xs->widths->[0],
+  		$data{$_}->[0];
+  }
 
-	@data = $xs->extract_hash('Sheet1');
+  @data = $xs->extract_hash('Sheet1');
 
-	@data = $xs->select("column1,column2,column3", 'Sheet1');
+  @data = $xs->select("column1,column2,column3", 'Sheet1');
 
-	@data = $xs->select_hash("column1,column2,column3", 'Sheet1');
+  @data = $xs->select_hash("column1,column2,column3", 'Sheet1');
 
-	printf "columns %d rows %d title_row %d\n",
-		$xs->columns, $xs->rows, $xs->title_row;
+  printf "columns %d rows %d title_row %d\n",
+  	$xs->columns, $xs->rows, $xs->title_row;
 
-	printf "regexp [%s] pathname [%s] sheet_name [%s]\n",
-		$xs->regexp, $xs->pathname, $xs->sheet_name;
+  printf "regexp [%s] pathname [%s] sheet_name [%s]\n",
+  	$xs->regexp, $xs->pathname, $xs->sheet_name;
 
-	printf "colid2title(0) = [%s]\n", $xs->colid2title(0);
+  printf "colid2title(0) = [%s]\n", $xs->colid2title(0);
 
-	printf "title2colid('Foo') = %d\n", $xs->title2colid('Foo');
+  printf "title2colid('Foo') = %d\n", $xs->title2colid('Foo');
 
 =head1 DESCRIPTION
 
@@ -116,10 +106,10 @@ Returns the pathname of the opened workbook.
 This will extract all data from the worksheet named EXPR.  Data is extracted
 into an array and returned.  Format of data is per below:
 
-	[ value1, value2, value3, ... ],
-	[ value1, value2, value3, ... ],
-	[ value1, value2, value3, ... ],
-	...
+  [ value1, value2, value3, ... ],
+  [ value1, value2, value3, ... ],
+  [ value1, value2, value3, ... ],
+  ...
 
 The object OBJ will be populated with various properties to assist you to
 access the data in the array, including column titles and widths.
@@ -733,9 +723,21 @@ __END__
 
 ___EUMM_VERSION___
 
-=head1 AUTHOR
+=head1 LICENSE
 
-Copyright (C) 2012  B<Tom McMeekin> tmcmeeki@cpan.org
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published
+by the Free Software Foundation; either version 2 of the License,
+or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 =head1 SEE ALSO
 
