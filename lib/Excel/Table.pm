@@ -632,7 +632,7 @@ sub extract_hash {
 	my $self = shift;
 
 	$self->_log->logcroak("SYNTAX: extract_hash(sheet_name,[title_row])")
-		unless (scalar(@_) > 0);
+		unless (@_ > 0);
 
 	return $self->_array_to_hash($self->extract(@_));
 }
@@ -643,7 +643,7 @@ sub select_hash {
 	my $clause = shift;
 
 	$self->_log->logcroak("SYNTAX: select_hash(clause,[sheet_name,title_row])")
-		unless (scalar(@_) > 0);
+		unless (@_ > 0);
 
 	return $self->_array_to_hash($self->select($clause, @_));
 }
