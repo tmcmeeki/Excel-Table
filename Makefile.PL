@@ -5,10 +5,11 @@ use ExtUtils::MakeMaker;
 
 
 my $preop = 'find $(DISTVNAME) -type f -exec egrep -q ___EUMM_VERSION___ {} \; -exec sed -i "s/___EUMM_VERSION___/Build V$(VERSION)/" {} \; -print ;' .
-'perldoc -uT $(DISTVNAME)/$(VERSION_FROM) > README.pod';
+'perldoc -uT $(DISTVNAME)/$(VERSION_FROM) > $(DISTVNAME)/README.pod';
 
 WriteMakefile(
     NAME              => 'Excel::Table',
+    MIN_PERL_VERSION => '5.006004',
     VERSION_FROM      => 'lib/Excel/Table.pm', # finds $VERSION
     PREREQ_PM         => {
         'Data::Dumper' => '0',
