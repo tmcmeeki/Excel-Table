@@ -7,6 +7,7 @@ Makefile.PL
 MANIFEST
 README
 README.md
+README.pod
 t/Excel-Table1a.t
 t/Excel-Table1b.t
 t/Excel-Table1c.t
