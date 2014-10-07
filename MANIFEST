@@ -6,7 +6,7 @@ LICENSE
 Makefile.PL
 MANIFEST
 README
-README.pod
+README.md
 t/Excel-Table1a.t
 t/Excel-Table1b.t
 t/Excel-Table1c.t
