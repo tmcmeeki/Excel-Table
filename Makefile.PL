@@ -9,7 +9,8 @@ my $preop = 'find $(DISTVNAME) -type f -exec egrep -q ___EUMM_VERSION___ {} \; -
 
 WriteMakefile(
     NAME              => 'Excel::Table',
-    MIN_PERL_VERSION => '5.006004',
+    MIN_PERL_VERSION  => '5.006004',
+    LICENSE           => 'gpl_2',
     VERSION_FROM      => 'lib/Excel/Table.pm', # finds $VERSION
     PREREQ_PM         => {
         'Data::Dumper' => '0',

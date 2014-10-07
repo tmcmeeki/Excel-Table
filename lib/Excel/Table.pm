@@ -1,14 +1,8 @@
 package Excel::Table;
-#
-# Excel::Table.pm - spreadsheet table processing class.
-#
+
 =head1 NAME
 
-Excel::Table 
-
-=head1 AUTHOR
-
-Copyright (C) 2012  Tom McMeekin E<lt>tmcmeeki@cpan.orgE<gt>
+Excel::Table - Table processing class for Excel worksheets. 
 
 =head1 SYNOPSIS
 
@@ -63,8 +57,8 @@ Copyright (C) 2012  Tom McMeekin E<lt>tmcmeeki@cpan.orgE<gt>
 
 =head1 DESCRIPTION
 
-Excel::Table.pm - spreadsheet table processing.  Retrieves worksheets as
-if they are structured tables array-format.
+"Excel::Table" retrieves worksheets as if they are structured
+tables in array-format or optionally in hash-format.
 
 =over 4
 
@@ -206,7 +200,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.021";	# update this on new release
+$VERSION = "1.022";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
@@ -723,6 +717,10 @@ __END__
 
 ___EUMM_VERSION___
 
+=head1 AUTHOR
+
+Copyright (C) 2012  Tom McMeekin E<lt>tmcmeeki@cpan.orgE<gt>
+
 =head1 LICENSE
 
 This program is free software; you can redistribute it and/or modify
@@ -741,7 +739,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 =head1 SEE ALSO
 
-L<perl>, Spreadsheet::ParseExcel, Spreadsheet::XLSX.
+L<perl>, L<Spreadsheet::ParseExcel>, L<Spreadsheet::XLSX>.
 
 =cut
 

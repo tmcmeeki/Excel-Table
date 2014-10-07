@@ -2,6 +2,12 @@ Revision history for Perl extension Excel::Table.
 
 Make sure you update the build number in the ./lib/Excel/Table.pm file!
 
+1.022	Tue, Oct 07, 2014  8:20:56 PM
+	- More CPANTS feedback.
+
+1.021	22-sep-2014
+	- CPAN Testers feedback and some CPANTS feedback.
+
 1.020	Thu, Jan 31, 2013 11:10:18 PM
 	- is_deeply has inconsistent results cross-platform, so 
 	  provide some explicit sorting, affects unit test harness only.
