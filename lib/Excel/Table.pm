@@ -200,7 +200,7 @@ use Log::Log4perl qw/ get_logger /;
 
 use vars qw/ @EXPORT $VERSION /;
 
-$VERSION = "1.022";	# update this on new release
+$VERSION = "1.023";	# update this on new release
 
 #@ISA = qw(Exporter);
 #@EXPORT = qw();
