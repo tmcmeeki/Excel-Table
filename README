@@ -39,7 +39,7 @@ This module requires these other modules and libraries:
 
   Data::Dumper
   Spreadsheet::ParseExcel
-  Spreadsheet::XLSX
+  Spreadsheet::ParseXLSX
   File::Basename
   Carp
   Log::Log4perl

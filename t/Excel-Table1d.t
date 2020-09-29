@@ -46,7 +46,9 @@ use strict;
 
 #use Logfer qw/ :all /;
 use Log::Log4perl qw/ :easy /;
-Log::Log4perl->easy_init($ERROR);
+
+my $g_dbg = ($ENV{'DEBUG'} eq '') ? $ERROR : $TRACE;
+Log::Log4perl->easy_init($g_dbg);
 
 
 # ---- globals ----

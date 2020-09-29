@@ -48,7 +48,9 @@ use Data::Dumper;
 
 # ---- logging ---- 
 use Log::Log4perl qw/ :easy /;
-Log::Log4perl->easy_init($ERROR);
+
+my $g_dbg = ($ENV{'DEBUG'} eq '') ? $ERROR : $TRACE;
+Log::Log4perl->easy_init($g_dbg);
 
 my $log = get_logger(__FILE__);
 

@@ -14,8 +14,8 @@ WriteMakefile(
     VERSION_FROM      => 'lib/Excel/Table.pm', # finds $VERSION
     PREREQ_PM         => {
         'Data::Dumper' => '0',
-        'Spreadsheet::ParseExcel' => '0.57',
-        'Spreadsheet::XLSX' => '0',
+        'Spreadsheet::ParseExcel' => '0.65',
+        'Spreadsheet::ParseXLSX' => '0.27',
         'File::Basename' => '0',
         'Carp' => '0',
         'Log::Log4perl' => '0',

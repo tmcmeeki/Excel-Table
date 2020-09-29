@@ -2,7 +2,8 @@ Revision history for Perl extension Excel::Table.
 
 Make sure you update the build number in the ./lib/Excel/Table.pm file!
 
-1.023	TBA
+1.023	Tue, Sep 29, 2020  5:45:15 PM
+	- fix for rt.cpan.org #133420
 	- added MANIFEST.SKIP
 
 1.022	Tue, Oct 07, 2014  8:20:56 PM
