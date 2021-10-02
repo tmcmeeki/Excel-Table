@@ -1,22 +1,34 @@
-Excel-Table version 0.01
-========================
+Excel-Table ___EUMM_VERSION___
+===========
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+Many spreadsheets are used to store semi-structured lists, such as
+catalogues, manifests, etc. in a table-like structure. These files
+typically evolve over time, and come to resemble databases,
+particularly in the case of Excel workbooks, where multiple
+worksheets are used in unison.
 
-A README file is required for CPAN modules since CPAN extracts the
-README file from a module distribution so that people browsing the
-archive can use it get an idea of the modules uses. It is usually a
-good idea to provide version information here so that people can
-decide whether fixes for the module are worth downloading.
+Whilst DBD::Excel can be used to provide an SQL-like interface to
+such sheets, it may not be practical to do so, and certainly for
+programmers not familiar or comfortable with SQL. This is
+particularly true for spreadsheets which have evolved over time and
+may not exhibit good database design, such as normalisation or
+consistent "column" naming.
+
+This module allows sheet data (assumed to be similarly structured
+to tables) to be processed as arrays (or hashes if desired) of rows
+with the ability to retrieve meta-data such as maximum value length,
+titles, etc. It also allows for duplicate column naming which often
+occur in such sheets which don't lend themselves well to handling
+via DBD.
+
+It leverages existing Excel parsing modules and as such caters to
+older and newer Excel formats.
 
 INSTALLATION
 
 To install this module type the following:
 
-   perl Makefile.PL
+   perl Makefile.PL INSTALLDIRS=site install_base=/your/site/prefix
    make
    make test
    make install
@@ -25,16 +37,19 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  blah blah blah
+  Data::Dumper
+  Spreadsheet::ParseExcel
+  Spreadsheet::ParseXLSX
+  File::Basename
+  Carp
+  Log::Log4perl
 
 COPYRIGHT AND LICENCE
 
-Put the correct copyright and licence information here.
-
-Copyright (C) 2021 by U-OVENS\tmcme
+Copyright (C) 2012 by Tom McMeekin
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.32.1 or,
+it under the same terms as Perl itself, either Perl version 5.10.1 or,
 at your option, any later version of Perl 5 you may have available.
 
 
